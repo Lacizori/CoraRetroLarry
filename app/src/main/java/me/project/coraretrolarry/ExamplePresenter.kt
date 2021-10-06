@@ -17,7 +17,7 @@ class ExamplePresenter : MvpPresenter<ExampleView>(),
             val result = apiService.getQuote()
             viewState.updateText(result.quote)
         }
-        viewState.updateText("Тут будет текст из интернетов")
+
 
     }
 }
