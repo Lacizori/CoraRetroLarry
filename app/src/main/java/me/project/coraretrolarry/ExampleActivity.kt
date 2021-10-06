@@ -1,9 +1,11 @@
 package me.project.coraretrolarry
 
 import android.os.Bundle
+import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.activity_main.*
+import me.project.coraretrolarry.model.SearchDto
 import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
-import kotlinx.android.synthetic.main.activity_main.*
 
 class ExampleActivity : MvpAppCompatActivity(), ExampleView {
 
@@ -13,14 +15,27 @@ class ExampleActivity : MvpAppCompatActivity(), ExampleView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        textView.setOnClickListener {
-            presenter.onTextClicked()
+        knopkabot.setOnClickListener {
+            presenter.onTextClicked(search.text.toString())
 
         }
 
     }
 
-    override fun updateText(text: String) {
-        textView.text = text
+    override fun updateImg(result: SearchDto) {
+        Glide.with(this)  //2
+            .load(result.videos[0].defaultThumb.src) //3
+            .centerCrop() //4
+            .into(image1verhlevo) //8
+
+        Glide.with(this)  //2
+            .load(result.videos[1].defaultThumb.src) //3
+            .centerCrop() //4
+            .into(image2verhpravo) //8
+
+        Glide.with(this)  //2
+            .load(result.videos[2].defaultThumb.src) //3
+            .centerCrop() //4
+            .into(image3niz) //8
     }
 }
