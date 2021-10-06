@@ -5,7 +5,7 @@ import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
 import kotlinx.android.synthetic.main.activity_main.*
 
-class ExampleActivity : MvpAppCompatActivity() {
+class ExampleActivity : MvpAppCompatActivity(), ExampleView {
 
     @InjectPresenter
     lateinit var presenter: ExamplePresenter
@@ -16,6 +16,11 @@ class ExampleActivity : MvpAppCompatActivity() {
         textView.setOnClickListener {
             presenter.onTextClicked()
 
+        }
+
     }
 
+    override fun updateText(text: String) {
+        textView.text = text
+    }
 }
