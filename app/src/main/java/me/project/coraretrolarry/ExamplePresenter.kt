@@ -1,4 +1,6 @@
 package me.project.coraretrolarry
 
-class ExamplePresenter {
+import moxy.MvpPresenter
+
+class ExamplePresenter : MvpPresenter<ExampleView>() {
 }

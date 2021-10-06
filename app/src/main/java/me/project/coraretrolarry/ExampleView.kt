@@ -1,4 +1,6 @@
 package me.project.coraretrolarry
 
-class ExampleView {
+import moxy.MvpView
+
+interface ExampleView : MvpView {
 }
