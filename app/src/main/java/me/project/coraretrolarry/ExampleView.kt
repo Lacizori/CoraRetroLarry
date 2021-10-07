@@ -9,4 +9,7 @@ interface ExampleView : MvpView {
 
     @AddToEndSingle
     fun updateImg(result: SearchDto)
+
+    @Skip
+    fun showError(message: String)
 }
