@@ -13,7 +13,7 @@
         app:layout_constraintBottom_toTopOf="@id/image3niz"
         app:layout_constraintEnd_toStartOf="@+id/image2verhpravo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/search" />
 
     <ImageView
         android:id="@+id/image2verhpravo"
@@ -22,13 +22,13 @@
         app:layout_constraintBottom_toTopOf="@id/image3niz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/image1verhlevo"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/image1verhlevo" />
 
     <ImageView
         android:id="@+id/image3niz"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/knopkabot"
         app:layout_constraintTop_toBottomOf="@+id/image1verhlevo" />
 
     <Button
@@ -36,13 +36,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:text="@string/load_image"
         app:layout_constraintBottom_toBottomOf="parent" />
+
     <EditText
+        android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/search"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
