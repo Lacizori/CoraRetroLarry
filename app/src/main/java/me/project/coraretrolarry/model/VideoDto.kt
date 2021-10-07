@@ -1,6 +1,5 @@
 package me.project.coraretrolarry.model
 
-
 import com.google.gson.annotations.SerializedName
 
 data class VideoDto(
