@@ -7,7 +7,6 @@ import moxy.viewstate.strategy.alias.AddToEndSingle
 
 interface ExampleView : MvpView {
 
-
     @AddToEndSingle
     fun updateImg(result: SearchDto)
 }

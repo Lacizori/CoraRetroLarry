@@ -22,8 +22,6 @@ object ImageRetrofitBuilder {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
         .create(ImageService::class.java)
-
-
-    }
+}
 
 

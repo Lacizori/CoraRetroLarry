@@ -8,7 +8,6 @@ import moxy.InjectViewState
 import moxy.MvpPresenter
 import kotlin.random.Random
 
-
 @InjectViewState
 class ExamplePresenter : MvpPresenter<ExampleView>(),
     CoroutineScope by CoroutineScope(Dispatchers.Main) {
