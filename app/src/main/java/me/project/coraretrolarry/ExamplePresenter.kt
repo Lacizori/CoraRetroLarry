@@ -16,14 +16,17 @@ class ExamplePresenter : MvpPresenter<ExampleView>(),
     fun onTextClicked(search: String) {
         launch {
             try {
+                viewState.showOrHideProgressBar(true)
                 val result = ImageRetrofitBuilder.apiClient.getVideosBySearch(
                     query = search,
                     page = Random.nextInt(0, 1000),
                     thumbSize = ThumbSize.LARGE
                 )
+                viewState.showOrHideProgressBar(false)
                 viewState.updateImg(result)
             } catch (e: Exception) {
                 viewState.showError(e.localizedMessage)
+                viewState.showOrHideProgressBar(false)
             }
         }
     }

@@ -1,6 +1,9 @@
 package me.project.coraretrolarry
 
 import android.os.Bundle
+import android.view.View
+import android.widget.ImageView
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_main.*
 import me.project.coraretrolarry.model.SearchDto
@@ -35,5 +38,12 @@ class ExampleActivity : MvpAppCompatActivity(), ExampleView {
 
     override fun showError(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+    }
+
+    override fun showOrHideProgressBar(show: Boolean) {
+        progress_bar.visibility = if (show)
+            View.VISIBLE
+        else
+            View.GONE
     }
 }
