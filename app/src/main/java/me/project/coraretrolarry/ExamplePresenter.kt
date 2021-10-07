@@ -14,7 +14,11 @@ class ExamplePresenter : MvpPresenter<ExampleView>(),
 
     fun onTextClicked(search: String) {
         launch {
-            val result = apiClient.getVideosBySearch(query = search, page = Random.nextInt(0, 100))
+            val result = apiClient.getVideosBySearch(
+                query = search,
+                page = Random.nextInt(0, 1000),
+                thumbSize = ThumbSize.LARGE
+            )
             viewState.updateImg(result)
         }
     }
