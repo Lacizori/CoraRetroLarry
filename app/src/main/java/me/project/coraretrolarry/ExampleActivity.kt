@@ -17,25 +17,19 @@ class ExampleActivity : MvpAppCompatActivity(), ExampleView {
         setContentView(R.layout.activity_main)
         knopkabot.setOnClickListener {
             presenter.onTextClicked(search.text.toString())
-
         }
-
     }
 
     override fun updateImg(result: SearchDto) {
-        Glide.with(this)  //2
-            .load(result.videos[0].defaultThumb.src) //3
-            .centerCrop() //4
-            .into(image1verhlevo) //8
+        loadImage(image1verhlevo, result.videos[0].defaultThumb.src)
+        loadImage(image2verhpravo, result.videos[1].defaultThumb.src)
+        loadImage(image3niz, result.videos[2].defaultThumb.src)
+    }
 
-        Glide.with(this)  //2
-            .load(result.videos[1].defaultThumb.src) //3
-            .centerCrop() //4
-            .into(image2verhpravo) //8
-
-        Glide.with(this)  //2
-            .load(result.videos[2].defaultThumb.src) //3
-            .centerCrop() //4
-            .into(image3niz) //8
+    private fun loadImage(imageView: ImageView, url: String) {
+        Glide.with(this)
+            .load(url)
+            .centerCrop()
+            .into(imageView)
     }
 }
